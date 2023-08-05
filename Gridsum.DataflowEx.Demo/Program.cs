@@ -12,7 +12,7 @@
 
     using Gridsum.DataflowEx.Databases;
     using Gridsum.DataflowEx.Test;
-    using Gridsum.DataflowEx.Test.DatabaseTests;
+    //using Gridsum.DataflowEx.Test.DatabaseTests;
 
     class Program
     {
@@ -54,7 +54,7 @@
             Console.WriteLine("sum(a) = {0}", dict["a"]); //prints sum(a) = 6
 
             string containerName = "dataflowex-demo-" + Guid.NewGuid();
-            TestBootstrapper.BootSqlServerWithDockerCli(null, containerName);
+            //TestBootstrapper.BootSqlServerWithDockerCli(null, containerName);
             //CalcAsync().Wait();
             //SlowFlowAsync().Wait();
             //FailDemoAsync().Wait();
@@ -62,13 +62,13 @@
             //LinkLeftToDemo().Wait();
             //CircularFlowAutoComplete().Wait();
             //RecorderDemo().Wait();
-            BulkInserterDemo().Wait();
+            //BulkInserterDemo().Wait();
             //BulkInserterDemo2().Wait();
             //BroadcasterDemo().Wait();
             //MyLoggerDemo().Wait();
             //ETLLookupDemo().Wait();
 
-            TestBootstrapper.ShutdownSqlServerWithDockerCli(false, containerName); // leave the container so that we can check result manually through ssms.
+            //TestBootstrapper.ShutdownSqlServerWithDockerCli(false, containerName); // leave the container so that we can check result manually through ssms.
         }
 
         public static async Task CalcAsync()

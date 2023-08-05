@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gridsum.DataflowEx.Test
 {
-    using DatabaseTests;
+    //using DatabaseTests;
     using System.Data.SqlClient;
     using System.Diagnostics;
     using System.Reflection;
@@ -59,10 +59,11 @@ namespace Gridsum.DataflowEx.Test
             }
 
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "localhost";   // update me
-            builder.UserID = "sa";              // update me
-            builder.Password = TestBootstrapper.s_saPassword;
+            builder.DataSource = "(localdb)\\mssqllocaldb";
+            builder.IntegratedSecurity = true;
             builder.InitialCatalog = addPrefix ? $"DataflowEx-TestDB-{dbName}" : dbName;
+            builder.MultipleActiveResultSets = true;
+            builder.TrustServerCertificate = true;
             return builder.ConnectionString;
         }
 
